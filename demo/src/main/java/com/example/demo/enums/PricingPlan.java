@@ -10,19 +10,19 @@
         FREE {
             @Override
             public Bandwidth getLimit() {
-                return Bandwidth.classic(20, Refill.intervally(20, Duration.ofHours(1)));
+                return Bandwidth.classic(20, Refill.greedy(20, Duration.ofMinutes(20)));
             }
         },
         BASIC {
             @Override
             public Bandwidth getLimit() {
-                return Bandwidth.classic(40, Refill.intervally(40, Duration.ofHours(1)));
+                return Bandwidth.classic(40, Refill.greedy(40, Duration.ofHours(1)));
             }
         },
         PROFESSIONAL {
             @Override
             public Bandwidth getLimit() {
-                return Bandwidth.classic(100, Refill.intervally(100, Duration.ofHours(1)));
+                return Bandwidth.classic(100, Refill.greedy(100, Duration.ofHours(1)));
             }
         };
 
